@@ -89,3 +89,12 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Cdk
+*.js
+!jest.config.js
+*.d.ts
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
