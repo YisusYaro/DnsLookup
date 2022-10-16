@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  deployer-service:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-deployer
+    container_name: deployer-container
+    privileged: true
+    volumes:
+      - ./:/usr/src/app
+      - /etc/passwd:/etc/passwd
+    stdin_open: true
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
