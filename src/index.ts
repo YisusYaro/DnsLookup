@@ -4,7 +4,7 @@ import { App } from './shared/infrastructure/dependency-injection/app';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { setConfigExpress } from './express.config';
 import { setErrorConfigExpress } from './express.config';
-import './resources/interface/resources.controller';
+import './dns-records/interface/dns-records.controller';
 
 const port = Number(process.env.PORT || 3000);
 
