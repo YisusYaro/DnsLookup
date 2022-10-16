@@ -1,6 +1,4 @@
-# typescript-ddd-example
-
-Typescript example using driven domain design and cqrs.
+# Dns Lookup
 
 ## Dev enviroment using node 📦
 
