@@ -7,10 +7,17 @@ on:
 
   workflow_dispatch:
 
-
 jobs:
   deployment:
     runs-on: docker:dind
 
     steps:
-      - run: docker ps
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: aschmelyun/cleaver:latest
+          options: -v ${{ github.workspace }}:/var/www
+          run: |
+            docker ps
