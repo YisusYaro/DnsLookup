@@ -12,12 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Run the build process with Docker
-        uses: addnab/docker-run-action@v3
-        with:
-          image: aschmelyun/cleaver:latest
-          options: -v ${{ github.workspace }}:/var/www
-          run: |
-            docker ps
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up -d
+      - name: Test
+        run: docker run --network container:webapp-frontend appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
