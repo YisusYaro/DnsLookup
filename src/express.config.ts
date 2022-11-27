@@ -1,10 +1,10 @@
 import cors from 'cors';
 import * as express from 'express';
 import { Logger } from './shared/domain/logger';
-import { BadRequest } from './shared/errors/bad-request.error';
-import { Forbidden } from './shared/errors/forbidden.error';
-import { NotFound } from './shared/errors/not-found.error';
-import { Unauthorized } from './shared/errors/unauthorized.error';
+import { BadRequest } from './shared/domain/errors/bad-request.error';
+import { Forbidden } from './shared/domain/errors/forbidden.error';
+import { NotFound } from './shared/domain/errors/not-found.error';
+import { Unauthorized } from './shared/domain/errors/unauthorized.error';
 import { App } from './shared/infrastructure/dependency-injection/app';
 import { TYPES } from './shared/infrastructure/dependency-injection/types';
 import { ulid } from 'ulid';
