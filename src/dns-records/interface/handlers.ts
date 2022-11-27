@@ -10,9 +10,11 @@ export const dnsLookupHandler = async (
   const params = event.pathParameters;
 
   return await handleErrors(async () => {
-    await dnsLookup({ ...params, ...body });
+    const result = await dnsLookup({ ...params, ...body });
     return {
-      statusCode: 204,
+      statusCode: 200,
+      headers: { 'Content-Type': 'text/json' },
+      body: JSON.stringify(result),
     };
   });
 };
