@@ -10,7 +10,8 @@ const port = Number(process.env.PORT || 3000);
 
 const container = App.getInstance().getContainer();
 
-App.getInstance().setDependencyInjectionApp();
+App.getInstance().setSharedModule();
+App.getInstance().setDnsRecordsModule();
 
 const server = new InversifyExpressServer(container);
 
