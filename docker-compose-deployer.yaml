@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile-deployer
-    container_name: deployer-container
+    container_name: dns-lookup-deployer-container
     privileged: true
     volumes:
       - ./:/usr/src/app
