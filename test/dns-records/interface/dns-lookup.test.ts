@@ -15,7 +15,8 @@ describe('Health check', () => {
 
   beforeAll(() => {
     container = App.getInstance().getContainer();
-    App.getInstance().setDependencyInjectionApp();
+    App.getInstance().setSharedModule();
+    App.getInstance().setDnsRecordsModule();
     const server = new InversifyExpressServer(container);
     app = buildExpressApp(server);
   });
