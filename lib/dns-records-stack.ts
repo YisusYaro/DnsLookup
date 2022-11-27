@@ -83,7 +83,7 @@ export class DnsRecordsStack extends cdk.Stack {
           '../dist/src/dns-records/interface/handlers.js',
         ),
         functionName: `${stackEnv}-dns-records-dns-lookup-function`,
-        handler: 'dnsLookupHandlerHandler',
+        handler: 'dnsLookupHandler',
         bundling,
         projectRoot,
         depsLockFilePath,
