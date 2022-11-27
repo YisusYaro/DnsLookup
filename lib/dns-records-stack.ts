@@ -93,10 +93,10 @@ export class DnsRecordsStack extends cdk.Stack {
     );
 
     httpDnsRecordsApi.addRoutes({
-      path: '/exhibitions/{exhibition}/users/{id}/firstName',
+      path: '/rrTypes/{rrType}/dnsRecords/{domain}',
       methods: [HttpMethod.PUT],
       integration: new HttpLambdaIntegration(
-        `${stackEnv}-${stackName}-change-user-firstName-integration`,
+        `${stackEnv}-${stackName}-dns-records-dns-lookup-integration`,
         dnsLookupHandlerFunction,
       ),
     });
