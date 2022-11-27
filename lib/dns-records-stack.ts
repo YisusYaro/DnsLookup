@@ -94,7 +94,7 @@ export class DnsRecordsStack extends cdk.Stack {
 
     httpDnsRecordsApi.addRoutes({
       path: '/rrTypes/{rrType}/dnsRecords/{domain}',
-      methods: [HttpMethod.PUT],
+      methods: [HttpMethod.GET],
       integration: new HttpLambdaIntegration(
         `${stackEnv}-${stackName}-dns-records-dns-lookup-integration`,
         dnsLookupHandlerFunction,
